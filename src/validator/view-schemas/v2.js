@@ -552,11 +552,6 @@ const definitions = {
             type: 'boolean'
           },
 
-          // whether or not to pin selected items in multi-select dropdown when not filtering locally
-          pinSelectedValues: {
-            type: 'boolean'
-          },
-
           // whether or not to update items using query on dropdown open
           updateItemsOnOpen: {
             type: 'boolean'
@@ -606,11 +601,6 @@ const definitions = {
 
       // whether or not to try to query for the current value when Ember Data is used to populate options
       queryForCurrentValue: {
-        type: 'boolean'
-      },
-
-      // whether or not to pin selected items in multi-select dropdown when not filtering locally
-      pinSelectedValues: {
         type: 'boolean'
       },
 

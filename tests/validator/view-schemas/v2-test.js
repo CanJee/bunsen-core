@@ -23,7 +23,6 @@ describe('v2 schema validation', () => {
             {
               model: 'foo',
               renderer: {
-                pinSelectedValues: true,
                 updateItemsOnOpen: true,
                 data: [{
                   label: 'label',
@@ -113,42 +112,6 @@ describe('v2 schema validation', () => {
         })
       })
 
-      describe('when pinSelectedValues option is specified', function () {
-        it('passes validation when pinSelectedValues is boolean', function () {
-          expect(schemaValidator.validate(value, model)).to.equal(true)
-        })
-
-        it('fails validation when value is number', function () {
-          value.cells[0].renderer.pinSelectedValues = 1.1
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('fails validation when value is integer', function () {
-          value.cells[0].renderer.pinSelectedValues = 1
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('fails validation when value is string', function () {
-          value.cells[0].renderer.pinSelectedValues = 'value'
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('passes validation when value is object', function () {
-          value.cells[0].renderer.pinSelectedValues = {}
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('fails validation when value is an array', function () {
-          value.cells[0].renderer.pinSelectedValues = []
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('fails validation when value is null', function () {
-          value.cells[0].renderer.pinSelectedValues = null
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-      })
-
       describe('when updateItemsOnOpen option is specified', function () {
         it('passes validation when updateItemsOnOpen is boolean', function () {
           expect(schemaValidator.validate(value, model)).to.equal(true)
@@ -198,7 +161,6 @@ describe('v2 schema validation', () => {
               renderer: {
                 name: 'select',
                 options: {
-                  pinSelectedValues: true,
                   updateItemsOnOpen: true,
                   data: [{
                     label: 'label',
@@ -284,42 +246,6 @@ describe('v2 schema validation', () => {
 
         it('fails validation when value is null', function () {
           value.cells[0].renderer.options.none.value = null
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-      })
-
-      describe('when pinSelectedValues option is specified', function () {
-        it('passes validation when pinSelectedValues is boolean', function () {
-          expect(schemaValidator.validate(value, model)).to.equal(true)
-        })
-
-        it('fails validation when value is number', function () {
-          value.cells[0].renderer.options.pinSelectedValues = 1.1
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('fails validation when value is integer', function () {
-          value.cells[0].renderer.options.pinSelectedValues = 1
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('fails validation when value is string', function () {
-          value.cells[0].renderer.options.pinSelectedValues = 'value'
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('passes validation when value is object', function () {
-          value.cells[0].renderer.options.pinSelectedValues = {}
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('fails validation when value is an array', function () {
-          value.cells[0].renderer.options.pinSelectedValues = []
-          expect(schemaValidator.validate(value, model)).to.equal(false)
-        })
-
-        it('fails validation when value is null', function () {
-          value.cells[0].renderer.options.pinSelectedValues = null
           expect(schemaValidator.validate(value, model)).to.equal(false)
         })
       })

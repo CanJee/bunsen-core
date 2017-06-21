@@ -552,6 +552,11 @@ const definitions = {
             type: 'boolean'
           },
 
+          // whether or not to refresh items in the list on dropdown open
+          updateItemsOnOpen: {
+            type: 'boolean'
+          },
+
           // description: where in API response to find records for list-based inputs
           recordsPath: {
             type: 'string'
@@ -596,6 +601,11 @@ const definitions = {
 
       // whether or not to try to query for the current value when Ember Data is used to populate options
       queryForCurrentValue: {
+        type: 'boolean'
+      },
+
+      // whether or not to refresh items in the list on dropdown open
+      updateItemsOnOpen: {
         type: 'boolean'
       },
 
